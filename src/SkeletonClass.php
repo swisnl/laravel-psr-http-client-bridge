@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace League\Skeleton;
+namespace Swis\Laravel\Bridge\PsrHttpClient;
 
 class SkeletonClass
 {

@@ -1,18 +1,18 @@
 {
-    "name": ":vendor/:package_name",
+    "name": "swisnl/laravel-psr-http-client-bridge",
     "type": "library",
-    "description": ":package_description",
+    "description": "Laravel PSR-18 HTTP Client Bridge",
     "keywords": [
-        ":vendor",
-        ":package_name"
+        "swisnl",
+        "laravel-psr-http-client-bridge"
     ],
-    "homepage": "https://github.com/:vendor/:package_name",
+    "homepage": "https://github.com/swisnl/laravel-psr-http-client-bridge",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": ":author_email",
-            "homepage": ":author_website",
+            "name": "Jasper Zonneveld",
+            "email": "jasper@swis.nl",
+            "homepage": "https://github.com/JaZo",
             "role": "Developer"
         }
     ],
@@ -25,12 +25,12 @@
     },
     "autoload": {
         "psr-4": {
-            ":vendor\\:package_name\\": "src"
+            "Swis\\Laravel\\Bridge\\PsrHttpClient\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            ":vendor\\:package_name\\Tests\\": "tests"
+            "Swis\\Laravel\\Bridge\\PsrHttpClient\\Tests\\": "tests"
         }
     },
     "scripts": {

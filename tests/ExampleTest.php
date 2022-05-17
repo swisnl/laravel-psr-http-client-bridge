@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace League\Skeleton\Tests;
+namespace Swis\Laravel\Bridge\PsrHttpClient\Tests;
 
 class ExampleTest extends \PHPUnit\Framework\TestCase
 {

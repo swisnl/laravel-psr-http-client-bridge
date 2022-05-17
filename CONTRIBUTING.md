@@ -2,7 +2,7 @@
 
 Contributions are **welcome** and will be fully **credited**.
 
-We accept contributions via Pull Requests on [Github](https://github.com/:vendor/:package_name).
+We accept contributions via Pull Requests on [Github](https://github.com/swisnl/laravel-psr-http-client-bridge).
 
 
 ## Pull Requests

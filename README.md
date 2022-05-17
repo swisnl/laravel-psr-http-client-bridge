@@ -1,4 +1,4 @@
-# :package_name
+# laravel-psr-http-client-bridge
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Software License][ico-license]](LICENSE.md)
@@ -8,8 +8,6 @@
 [![Quality Score][ico-code-quality]][link-code-quality]
 [![Total Downloads][ico-downloads]][link-downloads]
 [![Made by SWIS][ico-swis]][link-swis]
-
-**Note:** Replace ```:author_name``` ```:author_username``` ```:author_website``` ```:author_email``` ```:vendor``` ```:package_name``` ```:package_description``` with their correct values in [README.md](README.md), [CHANGELOG.md](CHANGELOG.md), [CONTRIBUTING.md](CONTRIBUTING.md), [LICENSE.md](LICENSE.md) and [composer.json](composer.json) files, then delete this line. You can run `$ php prefill.php` in the command line to make all replacements at once. Delete the file prefill.php as well.
 
 This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what
 PSRs you support to avoid any confusion with users and contributors.
@@ -34,13 +32,13 @@ vendor/
 Via Composer
 
 ``` bash
-$ composer require :vendor/:package_name
+$ composer require swisnl/laravel-psr-http-client-bridge
 ```
 
 ## Usage
 
 ``` php
-$skeleton = new League\Skeleton();
+$skeleton = new Swis\Laravel\Bridge\PsrHttpClient\SkeletonClass();
 echo $skeleton->echoPhrase('Hello, League!');
 ```
 
@@ -64,7 +62,7 @@ If you discover any security related issues, please email security@swis.nl inste
 
 ## Credits
 
-- [:author_name][link-author]
+- [Jasper Zonneveld][link-author]
 - [All Contributors][link-contributors]
 
 ## License
@@ -77,21 +75,21 @@ This package is [Treeware](https://treeware.earth). If you use it in production,
 
 [SWIS][link-swis] is a web agency from Leiden, the Netherlands. We love working with open source software. 
 
-[ico-version]: https://img.shields.io/packagist/v/:vendor/:package_name.svg?style=flat-square
+[ico-version]: https://img.shields.io/packagist/v/swisnl/laravel-psr-http-client-bridge.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
 [ico-treeware]: https://img.shields.io/badge/Treeware-%F0%9F%8C%B3-lightgreen.svg?style=flat-square
-[ico-travis]: https://img.shields.io/travis/:vendor/:package_name/master.svg?style=flat-square
-[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/:vendor/:package_name.svg?style=flat-square
-[ico-code-quality]: https://img.shields.io/scrutinizer/g/:vendor/:package_name.svg?style=flat-square
-[ico-downloads]: https://img.shields.io/packagist/dt/:vendor/:package_name.svg?style=flat-square
+[ico-travis]: https://img.shields.io/travis/swisnl/laravel-psr-http-client-bridge/master.svg?style=flat-square
+[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/swisnl/laravel-psr-http-client-bridge.svg?style=flat-square
+[ico-code-quality]: https://img.shields.io/scrutinizer/g/swisnl/laravel-psr-http-client-bridge.svg?style=flat-square
+[ico-downloads]: https://img.shields.io/packagist/dt/swisnl/laravel-psr-http-client-bridge.svg?style=flat-square
 [ico-swis]: https://img.shields.io/badge/%F0%9F%9A%80-made%20by%20SWIS-%230737A9.svg?style=flat-square
 
-[link-packagist]: https://packagist.org/packages/:vendor/:package_name
-[link-travis]: https://travis-ci.org/:vendor/:package_name
-[link-scrutinizer]: https://scrutinizer-ci.com/g/:vendor/:package_name/code-structure
-[link-code-quality]: https://scrutinizer-ci.com/g/:vendor/:package_name
-[link-downloads]: https://packagist.org/packages/:vendor/:package_name
-[link-treeware]: https://plant.treeware.earth/:vendor/:package_name
-[link-author]: https://github.com/:author_username
+[link-packagist]: https://packagist.org/packages/swisnl/laravel-psr-http-client-bridge
+[link-travis]: https://travis-ci.org/swisnl/laravel-psr-http-client-bridge
+[link-scrutinizer]: https://scrutinizer-ci.com/g/swisnl/laravel-psr-http-client-bridge/code-structure
+[link-code-quality]: https://scrutinizer-ci.com/g/swisnl/laravel-psr-http-client-bridge
+[link-downloads]: https://packagist.org/packages/swisnl/laravel-psr-http-client-bridge
+[link-treeware]: https://plant.treeware.earth/swisnl/laravel-psr-http-client-bridge
+[link-author]: https://github.com/swisnl
 [link-contributors]: ../../contributors
 [link-swis]: https://www.swis.nl
