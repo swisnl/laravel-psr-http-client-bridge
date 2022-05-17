@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace Swis\Laravel\Bridge\PsrHttpClient\Tests;
 
-use GrahamCampbell\TestBench\AbstractPackageTestCase;
 use GuzzleHttp\Psr7\Request as PsrRequest;
 use Illuminate\Http\Client\Request;
 use Illuminate\Support\Facades\Http;
+use Orchestra\Testbench\TestCase;
 use Swis\Laravel\Bridge\PsrHttpClient\Client;
 
-class ClientTest extends AbstractPackageTestCase
+class ClientTest extends TestCase
 {
     /**
      * @test
