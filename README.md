@@ -76,7 +76,7 @@ This package is [Treeware](https://treeware.earth). If you use it in production,
 [ico-swis]: https://img.shields.io/badge/%F0%9F%9A%80-made%20by%20SWIS-%230737A9.svg?style=flat-square
 
 [link-packagist]: https://packagist.org/packages/swisnl/laravel-psr-http-client-bridge
-[link-travis]: https://travis-ci.org/swisnl/laravel-psr-http-client-bridge
+[link-travis]: https://travis-ci.com/github/swisnl/laravel-psr-http-client-bridge
 [link-scrutinizer]: https://scrutinizer-ci.com/g/swisnl/laravel-psr-http-client-bridge/code-structure
 [link-code-quality]: https://scrutinizer-ci.com/g/swisnl/laravel-psr-http-client-bridge
 [link-downloads]: https://packagist.org/packages/swisnl/laravel-psr-http-client-bridge
