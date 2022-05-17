@@ -4,7 +4,13 @@
     "description": "Laravel PSR-18 HTTP Client Bridge",
     "keywords": [
         "swisnl",
-        "laravel-psr-http-client-bridge"
+        "psr",
+        "psr-18",
+        "http",
+        "http-client",
+        "client",
+        "laravel",
+        "bridge"
     ],
     "homepage": "https://github.com/swisnl/laravel-psr-http-client-bridge",
     "license": "MIT",
@@ -17,11 +23,15 @@
         }
     ],
     "require": {
-        "php": "^7.4|^8.0"
+        "php": "^7.4|^8.0",
+        "laravel/framework": "^8.0|^9.0",
+        "php-http/httplug": "^2.0"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.8",
-        "phpunit/phpunit" : "^9.5"
+        "graham-campbell/testbench": "^5.7",
+        "guzzlehttp/guzzle": "^7.4",
+        "phpunit/phpunit": "^9.5"
     },
     "autoload": {
         "psr-4": {

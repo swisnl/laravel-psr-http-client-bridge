@@ -1,4 +1,4 @@
-# laravel-psr-http-client-bridge
+# Laravel PSR-18 HTTP Client Bridge
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Software License][ico-license]](LICENSE.md)
@@ -9,23 +9,7 @@
 [![Total Downloads][ico-downloads]][link-downloads]
 [![Made by SWIS][ico-swis]][link-swis]
 
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what
-PSRs you support to avoid any confusion with users and contributors.
-
-## Structure
-
-If any of the following are applicable to your project, then the directory structure should follow industry best practices by being named the following.
-
-```
-bin/        
-build/
-docs/
-config/
-src/
-tests/
-vendor/
-```
-
+Provides a bridge to use the Laravel HTTP Client as PSR-18 (or PHP-HTTP) HTTP Client. Created as an experiment to use the HTTP response fakes and assertions in tests, for libraries that require a PSR-18 HTTP Client.
 
 ## Install
 
@@ -38,8 +22,15 @@ $ composer require swisnl/laravel-psr-http-client-bridge
 ## Usage
 
 ``` php
-$skeleton = new Swis\Laravel\Bridge\PsrHttpClient\SkeletonClass();
-echo $skeleton->echoPhrase('Hello, League!');
+$client = new Swis\Laravel\Bridge\PsrHttpClient\Client();
+$request = new Psr\Http\Message\RequestImplementation();
+$response = $client->sendRequest($request);
+```
+
+If you want to configure some request options, you can provide a callable that returns a `PendingRequest`.
+
+``` php
+$client = new Swis\Laravel\Bridge\PsrHttpClient\Client(fn () => Http::withOptions(['proxy' => 'http://localhost:8125']));
 ```
 
 ## Change log
