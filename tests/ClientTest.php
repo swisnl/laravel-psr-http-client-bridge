@@ -18,7 +18,7 @@ it('can send a request', function () {
             && $request->body() === 'foo=bar';
     });
 
-    expect((string)$response->getBody())->toBe('foo=baz')
+    expect((string) $response->getBody())->toBe('foo=baz')
         ->and($response->getStatusCode())->toBe(404)
         ->and($response->getHeader('X-Foo'))->toBe(['Baz']);
 });
