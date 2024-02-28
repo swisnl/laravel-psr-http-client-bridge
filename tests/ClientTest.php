@@ -1,53 +1,37 @@
 <?php
 
-declare(strict_types=1);
-
-namespace Swis\Laravel\Bridge\PsrHttpClient\Tests;
-
 use GuzzleHttp\Psr7\Request as PsrRequest;
 use Illuminate\Http\Client\Request;
 use Illuminate\Support\Facades\Http;
-use Orchestra\Testbench\TestCase;
 use Swis\Laravel\Bridge\PsrHttpClient\Client;
 
-class ClientTest extends TestCase
-{
-    /**
-     * @test
-     */
-    public function itCanSendARequest(): void
-    {
-        Http::fake(['*' => Http::response('foo=baz', 404, ['X-Foo' => 'Baz'])]);
+it('can send a request', function () {
+    Http::fake(['*' => Http::response('foo=baz', 404, ['X-Foo' => 'Baz'])]);
 
-        $client = new Client();
-        $response = $client->sendRequest(new PsrRequest('POST', 'https://example.com', ['X-Foo' => 'Bar'], 'foo=bar'));
+    $client = new Client();
+    $response = $client->sendRequest(new PsrRequest('POST', 'https://example.com', ['X-Foo' => 'Bar'], 'foo=bar'));
 
-        Http::assertSent(function (Request $request) {
-            return $request->method() === 'POST'
-                && $request->url() === 'https://example.com'
-                && $request->hasHeader('X-Foo', 'Bar')
-                && $request->body() === 'foo=bar';
-        });
+    Http::assertSent(function (Request $request) {
+        return $request->method() === 'POST'
+            && $request->url() === 'https://example.com'
+            && $request->hasHeader('X-Foo', 'Bar')
+            && $request->body() === 'foo=bar';
+    });
 
-        $this->assertEquals('foo=baz', (string) $response->getBody());
-        $this->assertEquals(404, $response->getStatusCode());
-        $this->assertEquals(['Baz'], $response->getHeader('X-Foo'));
-    }
+    expect((string)$response->getBody())->toBe('foo=baz')
+        ->and($response->getStatusCode())->toBe(404)
+        ->and($response->getHeader('X-Foo'))->toBe(['Baz']);
+});
 
-    /**
-     * @test
-     */
-    public function itUsesTheProvidedRequestFactory(): void
-    {
-        Http::fake(['*' => Http::response()]);
+it('uses the provided request factory', function () {
+    Http::fake(['*' => Http::response()]);
 
-        $client = new Client(fn () => Http::withHeaders(['X-Foo' => 'Bar']));
-        $client->sendRequest(new PsrRequest('GET', 'https://example.com'));
+    $client = new Client(fn () => Http::withHeaders(['X-Foo' => 'Bar']));
+    $client->sendRequest(new PsrRequest('GET', 'https://example.com'));
 
-        Http::assertSent(function (Request $request) {
-            return $request->method() === 'GET'
-                && $request->url() === 'https://example.com'
-                && $request->hasHeader('X-Foo', 'Bar');
-        });
-    }
-}
+    Http::assertSent(function (Request $request) {
+        return $request->method() === 'GET'
+            && $request->url() === 'https://example.com'
+            && $request->hasHeader('X-Foo', 'Bar');
+    });
+});

@@ -23,15 +23,22 @@
         }
     ],
     "require": {
-        "php": "^7.4|^8.0",
-        "laravel/framework": "^10.0",
+        "php": "^8.1",
+        "illuminate/contracts": "^10.0",
         "psr/http-client": "^1.0"
     },
     "require-dev": {
         "guzzlehttp/guzzle": "^7.4",
         "laravel/pint": "^1.0",
-        "orchestra/testbench": "^8.21",
-        "phpunit/phpunit": "^9.5"
+        "nunomaduro/collision": "^7.8",
+        "larastan/larastan": "^2.0.1",
+        "orchestra/testbench": "^8.8",
+        "pestphp/pest": "^2.20",
+        "pestphp/pest-plugin-arch": "^2.5",
+        "pestphp/pest-plugin-laravel": "^2.0",
+        "phpstan/extension-installer": "^1.1",
+        "phpstan/phpstan-deprecation-rules": "^1.0",
+        "phpstan/phpstan-phpunit": "^1.0"
     },
     "autoload": {
         "psr-4": {
@@ -44,15 +51,18 @@
         }
     },
     "scripts": {
-        "test": "vendor/bin/phpunit",
+        "analyse": "vendor/bin/phpstan analyse",
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest --coverage",
         "format": "vendor/bin/pint"
     },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "1.0-dev"
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "phpstan/extension-installer": true
         }
     },
-    "config": {
-        "sort-packages": true
-    }
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
