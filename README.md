@@ -9,7 +9,7 @@
 [![Total Downloads][ico-downloads]][link-downloads]
 [![Made by SWIS][ico-swis]][link-swis]
 
-Provides a bridge to use the Laravel HTTP Client as PSR-18 (or PHP-HTTP) HTTP Client. Created as an experiment to use the HTTP response fakes and assertions in tests, for libraries that require a PSR-18 HTTP Client.
+Provides a bridge to use the Laravel HTTP Client as PSR-18 HTTP Client. Created as an experiment to use the HTTP response fakes and assertions in tests, for libraries that require a PSR-18 HTTP Client.
 
 ## Install
 

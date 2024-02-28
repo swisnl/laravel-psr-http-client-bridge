@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Swis\Laravel\Bridge\PsrHttpClient;
 
-use Http\Client\HttpClient as ClientInterface;
 use Illuminate\Http\Client\PendingRequest;
 use Illuminate\Support\Facades\Http;
+use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 
