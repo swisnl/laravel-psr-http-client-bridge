@@ -23,10 +23,10 @@ class ClientTest extends TestCase
         $response = $client->sendRequest(new PsrRequest('POST', 'https://example.com', ['X-Foo' => 'Bar'], 'foo=bar'));
 
         Http::assertSent(function (Request $request) {
-            return $request->method() === 'POST' &&
-                $request->url() === 'https://example.com' &&
-                $request->hasHeader('X-Foo', 'Bar') &&
-                $request->body() === 'foo=bar';
+            return $request->method() === 'POST'
+                && $request->url() === 'https://example.com'
+                && $request->hasHeader('X-Foo', 'Bar')
+                && $request->body() === 'foo=bar';
         });
 
         $this->assertEquals('foo=baz', (string) $response->getBody());
@@ -45,9 +45,9 @@ class ClientTest extends TestCase
         $client->sendRequest(new PsrRequest('GET', 'https://example.com'));
 
         Http::assertSent(function (Request $request) {
-            return $request->method() === 'GET' &&
-                $request->url() === 'https://example.com' &&
-                $request->hasHeader('X-Foo', 'Bar');
+            return $request->method() === 'GET'
+                && $request->url() === 'https://example.com'
+                && $request->hasHeader('X-Foo', 'Bar');
         });
     }
 }

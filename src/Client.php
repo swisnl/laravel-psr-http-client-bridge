@@ -17,7 +17,7 @@ class Client implements ClientInterface
      */
     protected $pendingRequestFactory;
 
-    public function __construct(callable $pendingRequestFactory = null)
+    public function __construct(?callable $pendingRequestFactory = null)
     {
         $this->pendingRequestFactory = $pendingRequestFactory ?? static function (): PendingRequest {
             return Http::withOptions([]);
