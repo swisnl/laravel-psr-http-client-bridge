@@ -7,7 +7,7 @@
 [![Total Downloads][ico-downloads]][link-downloads]
 [![Made by SWIS][ico-swis]][link-swis]
 
-Provides a bridge to use the Laravel HTTP Client as PSR-18 HTTP Client, for usage with libraries that require such a Client. This allows you to:
+Provides a bridge to use the Laravel HTTP Client as PSR-18 (or Guzzle) HTTP Client, for usage with libraries that require such a Client. This allows you to:
 
  * 🤖 Use request fakes and assertions in your tests
  * 🔍 Debug requests in tools like Telescope or Pulse
@@ -24,16 +24,17 @@ composer require swisnl/laravel-psr-http-client-bridge
 
 ## Usage
 
+Simply instantiate the `Swis\Laravel\Bridge\PsrHttpClient\Client` and use it as you would use any other PSR-18 or Guzzle HTTP client.
+
 ``` php
-$client = new Swis\Laravel\Bridge\PsrHttpClient\Client();
-$request = new Psr\Http\Message\RequestImplementation();
-$response = $client->sendRequest($request);
+$httpClient = new Swis\Laravel\Bridge\PsrHttpClient\Client();
+$client = new My\Awesome\Api\Client($httpClient);
 ```
 
 If you want to configure some request options, you can provide a callable that returns a `PendingRequest`.
 
 ``` php
-$client = new Swis\Laravel\Bridge\PsrHttpClient\Client(
+$httpClient = new Swis\Laravel\Bridge\PsrHttpClient\Client(
     fn () => Http::withOptions(['proxy' => 'http://localhost:8125'])
 );
 ```
