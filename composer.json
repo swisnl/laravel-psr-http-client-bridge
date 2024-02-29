@@ -40,6 +40,9 @@
         "phpstan/phpstan-deprecation-rules": "^1.0",
         "phpstan/phpstan-phpunit": "^1.0"
     },
+    "provide": {
+        "psr/http-client-implementation": "1.0"
+    },
     "autoload": {
         "psr-4": {
             "Swis\\Laravel\\Bridge\\PsrHttpClient\\": "src"
