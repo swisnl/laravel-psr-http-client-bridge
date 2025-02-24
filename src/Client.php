@@ -34,6 +34,9 @@ class Client implements GuzzleClientInterface, PsrClientInterface
             ->toPsrResponse();
     }
 
+    /**
+     * @param  array<string, mixed>  $options
+     */
     public function send(RequestInterface $request, array $options = []): ResponseInterface
     {
         return $this->newPendingRequest()
@@ -42,6 +45,9 @@ class Client implements GuzzleClientInterface, PsrClientInterface
             ->toPsrResponse();
     }
 
+    /**
+     * @param  array<string, mixed>  $options
+     */
     public function sendAsync(RequestInterface $request, array $options = []): PromiseInterface
     {
         /** @var \GuzzleHttp\Promise\PromiseInterface */
@@ -51,6 +57,9 @@ class Client implements GuzzleClientInterface, PsrClientInterface
             ->send($request->getMethod(), (string) $request->getUri(), array_merge(['body' => $request->getBody()], $options));
     }
 
+    /**
+     * @param  array<string, mixed>  $options
+     */
     public function request(string $method, $uri, array $options = []): ResponseInterface
     {
         return $this->newPendingRequest()
@@ -58,6 +67,9 @@ class Client implements GuzzleClientInterface, PsrClientInterface
             ->toPsrResponse();
     }
 
+    /**
+     * @param  array<string, mixed>  $options
+     */
     public function requestAsync(string $method, $uri, array $options = []): PromiseInterface
     {
         /** @var \GuzzleHttp\Promise\PromiseInterface */
