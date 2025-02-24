@@ -21,7 +21,7 @@ it('uses the provided request factory', function () {
 it('implements sendRequest', function () {
     Http::fake(['*' => Http::response('foo=baz', 404, ['X-Foo' => 'Baz'])]);
 
-    $client = new Client();
+    $client = new Client;
     $response = $client->sendRequest(new PsrRequest('POST', 'https://example.com', ['X-Foo' => 'Bar'], 'foo=bar'));
 
     Http::assertSent(function (Request $request) {
@@ -39,7 +39,7 @@ it('implements sendRequest', function () {
 it('implements send', function () {
     Http::fake(['*' => Http::response('foo=baz', 404, ['X-Foo' => 'Baz'])]);
 
-    $client = new Client();
+    $client = new Client;
     $response = $client->send(new PsrRequest('POST', 'https://example.com', ['X-Foo' => 'Bar'], 'foo=bar'));
 
     Http::assertSent(function (Request $request) {
@@ -57,7 +57,7 @@ it('implements send', function () {
 it('implements sendAsync', function () {
     Http::fake(['*' => Http::response('foo=baz', 404, ['X-Foo' => 'Baz'])]);
 
-    $client = new Client();
+    $client = new Client;
     $response = $client->sendAsync(new PsrRequest('POST', 'https://example.com', ['X-Foo' => 'Bar'], 'foo=bar'))->wait();
 
     Http::assertSent(function (Request $request) {
@@ -75,7 +75,7 @@ it('implements sendAsync', function () {
 it('implements request', function () {
     Http::fake(['*' => Http::response('foo=baz', 404, ['X-Foo' => 'Baz'])]);
 
-    $client = new Client();
+    $client = new Client;
     $response = $client->request('POST', 'https://example.com', ['headers' => ['X-Foo' => 'Bar'], 'body' => 'foo=bar']);
 
     Http::assertSent(function (Request $request) {
@@ -93,7 +93,7 @@ it('implements request', function () {
 it('implements requestAsync', function () {
     Http::fake(['*' => Http::response('foo=baz', 404, ['X-Foo' => 'Baz'])]);
 
-    $client = new Client();
+    $client = new Client;
     $response = $client->requestAsync('POST', 'https://example.com', ['headers' => ['X-Foo' => 'Bar'], 'body' => 'foo=bar'])->wait();
 
     Http::assertSent(function (Request $request) {
