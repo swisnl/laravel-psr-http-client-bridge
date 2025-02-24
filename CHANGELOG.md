@@ -21,6 +21,12 @@ Updates should follow the [Keep a CHANGELOG](https://keepachangelog.com/) princi
 ### Security
 - Nothing
 
+## [0.2.1] - 2025-02-24
+
+### Added
+
+* Added support for Laravel 12.
+
 ## [0.2.0] - 2024-03-28
 
 ### Added
