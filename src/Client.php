@@ -50,7 +50,7 @@ class Client implements GuzzleClientInterface, PsrClientInterface
      */
     public function sendAsync(RequestInterface $request, array $options = []): PromiseInterface
     {
-        /** @var \GuzzleHttp\Promise\PromiseInterface */
+        /** @var PromiseInterface */
         return $this->newPendingRequest()
             ->async()
             ->withHeaders($request->getHeaders())
@@ -72,7 +72,7 @@ class Client implements GuzzleClientInterface, PsrClientInterface
      */
     public function requestAsync(string $method, $uri, array $options = []): PromiseInterface
     {
-        /** @var \GuzzleHttp\Promise\PromiseInterface */
+        /** @var PromiseInterface */
         return $this->newPendingRequest()
             ->async()
             ->send($method, (string) $uri, $options);
